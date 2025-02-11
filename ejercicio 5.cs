@@ -1,10 +1,31 @@
-﻿# Aquí vamos, ¡20 numerillos! 🎉
 using System;
 
-nums = [int(input(f"Dame tu número #{i+1}: ")) for i in range(20)]
+class Program
+{
+    static void Main()
+    {
+        int[] nums = new int[20];
 
-# Cuenta mágica: pares 😎 vs impares 🧙♂️
-pares = sum(1 for num in nums if num % 2 == 0)
-            impares = 20 - pares  # Trucazo matemático 🔥
+        // Pedir al usuario que ingrese los 20 números
+        for (int i = 0; i < 20; i++)
+        {
+            Console.Write($"Dame tu número #{i + 1}: ");
+            nums[i] = int.Parse(Console.ReadLine());
+        }
 
-print(f"Pares: {pares} 😎 | Impares: {impares} 🧙♂️")
+        // Contar los números pares e impares
+        int pares = 0;
+        foreach (var num in nums)
+        {
+            if (num % 2 == 0) // Si el número es par
+            {
+                pares++;
+            }
+        }
+
+        int impares = 20 - pares; // El resto serán impares
+
+        // Mostrar los resultados
+        Console.WriteLine($"Pares: {pares} 😎 | Impares: {impares} 🧙♂️");
+    }
+}
